@@ -87,7 +87,7 @@ const updateListForInput = async (value, inputRef) => {
   }
 };
 
-const debounced = debounce(updateListForInput, 1000);
+const debounced = debounce(updateListForInput, 500);
 
 document.addEventListener("DOMContentLoaded", () => {
   const input = document.getElementById("auto-complete");
