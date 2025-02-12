@@ -1,0 +1,37 @@
+.custom-input-style {
+  width: 400px;
+  height: 25px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+}
+
+.custom-input-style:focus {
+  outline: none;
+}
+
+.app {
+  position: relative;
+}
+
+.input-list {
+  width: 400px;
+  position: absolute;
+  border-radius: 10px;
+  top: 45px;
+  box-shadow: 1px 1px 2px 2px gray;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-bottom: solid 1px #7393b3;
+}
+
+.list-item:hover {
+  background-color: #89cff0;
+}
