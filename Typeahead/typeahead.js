@@ -23,13 +23,18 @@ const debounce = (fn, delay) => {
   };
 };
 
-const createInputList = (inputRef) => {
+const createInputList = async (inputRef) => {
   const inputSection = document.getElementById("input-list-container");
   if (!inputSection) {
     const inputListContainer = document.createElement("div");
 
     inputListContainer.id = "input-list-container";
     inputListContainer.classList.add("input-list");
+    await new Promise((res, rej) => {
+      setTimeout(() => {
+        res();
+      }, 1000);
+    });
     sampleData.slice(0, 5).map((item) => {
       const listItem = document.createElement("div");
       listItem.textContent = item.label;
@@ -49,15 +54,21 @@ const createInputList = (inputRef) => {
   return inputSection;
 };
 
-const updateListForInput = (value, inputRef) => {
-  console.log(value, value.length);
+const updateListForInput = async (value, inputRef) => {
   if (!value.length) {
     const parent = document.getElementById("app");
     parent.removeChild(document.getElementById("input-list-container"));
-    const newList = createInputList(document.getElementById("auto-complete"));
+    const newList = await createInputList(
+      document.getElementById("auto-complete")
+    );
     parent.appendChild(newList);
   } else {
     const inputListContainer = document.getElementById("input-list-container");
+    await new Promise((res, rej) => {
+      setTimeout(() => {
+        res();
+      }, 1000);
+    });
     const filteredData = sampleData.filter((item) =>
       item.value.includes(value)
     );
@@ -93,8 +104,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  input.addEventListener("focus", () => {
-    const listContainer = createInputList(input);
+  input.addEventListener("focus", async () => {
+    const listContainer = await createInputList(input);
     const parent = document.getElementById("app");
     parent.appendChild(listContainer);
   });
