@@ -1,0 +1,30 @@
+.parent {
+  width: 90px;
+  height: 90px;
+  background-color: antiquewhite;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.child {
+  width: 30px;
+  height: 30px;
+  background-color: aquamarine;
+}
+
+.first {
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+
+.second {
+}
+
+.third {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
