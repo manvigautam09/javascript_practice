@@ -1,0 +1,24 @@
+.progress {
+  height: 35px;
+  width: 200px;
+  border-radius: 10px;
+  border: solid 1px gray;
+  margin-bottom: 10px;
+}
+
+.progress-bar {
+  background: linear-gradient(
+    to right,
+    violet,
+    indigo,
+    blue,
+    green,
+    yellow,
+    orange,
+    red
+  );
+  height: 100%;
+  border-radius: 9px;
+  width: 0%;
+  transition: width 0.1s linear;
+}
