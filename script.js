@@ -4,39 +4,39 @@
 // Example: Log a message when the page loads
 document.addEventListener("DOMContentLoaded", () => {
   // Accordions;
-  // var accordionParent = document.getElementById("accordions");
-  // for (var i = 0; i < 5; i++) {
-  //   var accordionDiv = document.createElement("div");
-  //   accordionDiv.innerHTML = `Accordion-${i + 1}`;
-  //   // const node = document.createTextNode(`Accordion-${i + 1}`);
-  //   // accordionDiv.appendChild(node);
-  //   accordionDiv.id = `Accordion-${i + 1}`;
-  //   accordionParent.appendChild(accordionDiv);
-  // }
-  // accordionParent.addEventListener("click", (e) => {
-  //   var clickedChild = document.getElementById(e.target.id);
-  //   var allChildren = accordionParent.children;
-  //   Array.from(allChildren).forEach((element) => {
-  //     var child = document.getElementById(element.id);
-  //     var grandchild = child.children;
-  //     if (clickedChild.id === child.id) {
-  //       if (grandchild.length === 0) {
-  //         var newGrandchild = document.createElement("div");
-  //         newGrandchild.innerHTML = `Accordain-content-${clickedChild.id}`;
-  //         newGrandchild.addEventListener("click", (e) => {
-  //           e.stopPropagation();
-  //         });
-  //         clickedChild.appendChild(newGrandchild);
-  //       } else {
-  //         child.removeChild(grandchild[0]);
-  //       }
-  //     } else {
-  //       if (grandchild.length > 0) {
-  //         child.removeChild(grandchild[0]);
-  //       }
-  //     }
-  //   });
-  // });
+  var accordionParent = document.getElementById("accordions");
+  for (var i = 0; i < 5; i++) {
+    var accordionDiv = document.createElement("div");
+    accordionDiv.innerHTML = `Accordion-${i + 1}`;
+    // const node = document.createTextNode(`Accordion-${i + 1}`);
+    // accordionDiv.appendChild(node);
+    accordionDiv.id = `Accordion-${i + 1}`;
+    accordionParent.appendChild(accordionDiv);
+  }
+  accordionParent.addEventListener("click", (e) => {
+    var clickedChild = document.getElementById(e.target.id);
+    var allChildren = accordionParent.children;
+    Array.from(allChildren).forEach((element) => {
+      var child = document.getElementById(element.id);
+      var grandchild = child.children;
+      if (clickedChild.id === child.id) {
+        if (grandchild.length === 0) {
+          var newGrandchild = document.createElement("div");
+          newGrandchild.innerHTML = `Accordain-content-${clickedChild.id}`;
+          newGrandchild.addEventListener("click", (e) => {
+            e.stopPropagation();
+          });
+          clickedChild.appendChild(newGrandchild);
+        } else {
+          child.removeChild(grandchild[0]);
+        }
+      } else {
+        if (grandchild.length > 0) {
+          child.removeChild(grandchild[0]);
+        }
+      }
+    });
+  });
   // Retries -- Debounce
   // async function retry(
   //   asyncFn,
