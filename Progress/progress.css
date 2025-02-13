@@ -22,3 +22,13 @@
   width: 0%;
   transition: width 0.1s linear;
 }
+
+.input {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 5px;
+}
+
+.input:focus {
+  outline: none;
+}

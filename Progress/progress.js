@@ -58,4 +58,19 @@ document.addEventListener("DOMContentLoaded", () => {
   buttonStop.textContent = "Stop";
   parent.appendChild(buttonStop);
   buttonStop.addEventListener("click", stopInterval);
+
+  const input = document.createElement("input");
+  parent.appendChild(input);
+  input.type = "number";
+  input.min = 0;
+  input.max = 100;
+  input.classList.add("input");
+  input.value = 0;
+  input.addEventListener("input", (e) => {
+    if (intervalId) {
+      clearInterval(intervalId);
+      intervalId = null;
+      progressBar.style.width = `${e.target.value}%`;
+    }
+  });
 });
